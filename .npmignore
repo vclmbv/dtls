@@ -1,0 +1,12 @@
+.github/
+node_modules/
+src/
+.env
+.gitignore
+CHANGELOG.md
+commitlint.config.js
+LICENSE
+package-lock.json
+release.config.js
+tsconfig.json
+vite.config.js

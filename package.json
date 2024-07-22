@@ -1,0 +1,63 @@
+{
+  "name": "@vclmbv/dtls",
+  "version": "0.0.0",
+  "private": false,
+  "description": "simple utils library",
+  "keywords": [
+    "dtls"
+  ],
+  "author": "vclmbv",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/dtls.umd.cjs",
+  "module": "dist/dtls.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/dtls.js",
+      "require": "./dist/dtls.umd.cjs",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vclmbv/dtls.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "addmit": "git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md'",
+    "push": "git push origin && git push origin --tags",
+    "release:major": "changelog -M && npm run addmit && npm version major && npm run push",
+    "release:minor": "changelog -m && npm run addmit && npm version minor && npm run push",
+    "release:patch": "changelog -p && npm run addmit && npm version patch && npm run push",
+    "commit": "cz && commitlint --edit --verbose",
+    "release:local": "semantic-release --no-ci",
+    "auto": "git add . && git commit && git push origin main"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.2.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^20.14.9",
+    "@vclmbv/utls": "^0.0.35",
+    "commitlint": "^19.3.0",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "dotenv": "^16.4.5",
+    "generate-changelog": "^1.8.0",
+    "semantic-release": "^24.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vite-plugin-dts": "^3.9.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
